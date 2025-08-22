@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works - Linh Page</title>
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+  <!-- Header with the logo -->
+  <header class="header">
+    <a href="homepage.html">
+      <img src="./assets/logo.svg" alt="Linh Page Logo" class="logo">
+    </a>  
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <!-- Blue square section for scrolling projects -->
+    <div class="projects-container">
+      <div class="project" id="project1">
+        <h2>Project 1</h2>
+        <p>Description of Project 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="project" id="project2">
+        <h2>Project 2</h2>
+        <p>Description of Project 2 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="project" id="project3">
+        <h2>Project 3</h2>
+        <p>Description of Project 3 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="project" id="project4">
+        <h2>Project 4</h2>
+        <p>Description of Project 4 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+
+    <!-- Right side panel with additional options or links -->
+    <div class="side-panel">
+      <div class="option" onclick="showProject(1)">
+        <p>Project 1</p>
+      </div>
+      <div class="option" onclick="showProject(2)">
+        <p>Project 2</p>
+      </div>
+      <div class="option" onclick="showProject(3)">
+        <p>Project 3</p>
+      </div>
+      <div class="option" onclick="showProject(4)">
+        <p>Project 4</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="works.js"></script>
+</body>
+</html>

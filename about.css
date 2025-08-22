@@ -1,0 +1,104 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Container for the About Page */
+.about-container {
+  display: flex;
+  height: 100vh;               /* Full viewport height */
+  position: relative;
+  flex-direction: column;
+  padding-bottom: 40px;       /* Give space for the side panel */
+}
+
+/* Header: Logo is positioned at the top-left */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* Name and Contact Info Section */
+.name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name-container h1 {
+  font-size: 4rem;
+  color: #333;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Bio Section - Positioned below contact */
+.bio {
+  width: 70%;
+}
+
+.bio p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Image Placeholder at the left bottom */
+.image-placeholder {
+  width: 30%;
+  height: 250px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #888;
+}
+
+/* Software List Section */
+.software-list {
+  margin-top: 20px;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.software-list p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.software-list ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.software-list li {
+  margin-bottom: 10px;
+}

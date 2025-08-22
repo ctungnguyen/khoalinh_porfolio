@@ -1,0 +1,95 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;    /* Horizontally center */
+  align-items: center;        /* Vertically center */
+  height: 100vh;               /* Full viewport height */
+  position: relative;
+  flex-direction: column;
+  padding-bottom: 40px;       /* Give space for the side panel */
+}
+
+/* Blue area where the projects are displayed */
+.projects-container {
+  width: 90%;
+  height: 90%;                 /* Ensure it takes up the majority of the screen */
+  background-color: #98caec;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;     /* Stack the projects vertically */
+  gap: 20px;
+  justify-content: center;    /* Center the projects */
+  align-items: center;
+}
+
+.project {
+  display: none; /* Hide all projects by default */
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make project width fit the container */
+  text-align: center;
+}
+
+.project h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Right-side panel with options */
+.side-panel {
+  position: absolute;
+  bottom: 20px; /* Keep the panel at the bottom left */
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Makes the options look like clickable buttons */
+}
+
+.option p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.option:hover {
+  background-color: #e0e0e0; /* Add hover effect */
+}

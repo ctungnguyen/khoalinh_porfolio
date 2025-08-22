@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  text-align: center;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+.character img {
+  max-width: 60%;
+  height: auto;
+  position: absolute;
+  top:55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Large text in the middle for "Linh Page" */
+.text-content h1 {
+  font-size: 18rem;
+  color: black;
+  font-weight: bold;
+  bottom:60%;
+  position: relative;
+  z-index: 2;
+  margin-left: 20px;
+}
+
+/* Links section (left and right) */
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  position: relative;
+}
+
+.left-links {
+  display: flex;
+  text-align: left;
+  width: 40%;
+  position: absolute;
+  left: 0;
+  top: 67%;
+  transform: translateY(-50%);
+  margin-left:20px;
+}
+
+.right-links {
+  text-align: right;
+  width: 17%;
+  position: absolute;
+  right: 0;
+  top: 65%;
+  transform: translateY(-50%);
+
+  border-top: 2px solid black;
+  padding-bottom: 5px;
+}
+
+/* Works text aligned vertically */
+.left-links .works p {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+
+/* Japanese Text */
+.left-links .japanese-text-1 p,
+.left-links .japanese-text-2 p,
+.left-links .japanese-text-3 p {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  margin-right:5px;
+}
+
+.left-links .works,
+.left-links .japanese-text-1 {
+  margin-top: auto;
+}
+
+.left-links .line {
+  width: 2px; /* Thickness of the line */
+  background-color: black;
+  margin: 0 5px 0 5px;
+}
+
+/* Right Side: About and Contact */
+.right-links .about p,
+.right-links .contact p {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-right:20px;
+}
+
+.right-links .contact p {
+  font-size: 1.8rem;
+}
+
+
+a {
+  color: black;               /* Set the font color to black */
+  text-decoration: none;      /* Remove underline */
+  transition: none;           /* No animation or transition effect */
+}
+
+a:hover {
+  color: black;               /* Ensure color stays black on hover */
+  text-decoration: none;      /* Ensure underline is removed on hover */
+}
