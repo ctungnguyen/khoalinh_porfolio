@@ -7,7 +7,7 @@
 
 body, html {
   height: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Fugaz One', sans-serif;
 }
 
 header {
@@ -22,15 +22,14 @@ header {
 .logo {
   width: 80px;
   height: auto;
+  transition: width 0.5s ease;
 }
 
 .main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
   height: 100%;
   position: relative;
-  flex-direction: column;
   text-align: center;
 }
 
@@ -45,72 +44,114 @@ header {
 }
 
 .character img {
-  max-width: 60%;
+  max-width: 65%;
   height: auto;
   position: absolute;
-  top:55%;
+  bottom: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  transition: max-width 0.5s ease;
   z-index: 1;
 }
 
-/* Large text in the middle for "Linh Page" */
-.text-content h1 {
-  font-size: 18rem;
-  color: black;
-  font-weight: bold;
-  bottom:60%;
+.text-content {
   position: relative;
   z-index: 2;
-  margin-left: 20px;
 }
 
-/* Links section (left and right) */
-.links {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
+.text-content h1 {
+  font-size: 15vw;
+  color: black;
+  font-weight: bold;
   position: relative;
+  bottom: 5%;
+}
+
+/* Cloud and Sea Animation */
+.cloud, .sea {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  width: 100%;  /* Make the cloud or sea take the full width */
+  object-fit: cover; /* Ensure the image covers the background without stretching */
+  animation: moveCloud 10s linear infinite; /* Animation for cloud */
+}
+
+/* Cloud animation */
+@keyframes moveCloud {
+  0% {
+    transform: translateX(-50%) translateY(0); /* Start position */
+  }
+  50% {
+    transform: translateX(-40%) translateY(10px); /* Middle position */
+  }
+  100% {
+    transform: translateX(-50%) translateY(0); /* End position */
+  }
+}
+
+/* Sea animation */
+.sea {
+  animation: moveSea 15s linear infinite; /* Animation for sea */
+}
+
+@keyframes moveSea {
+  0% {
+    transform: translateX(-50%) translateY(0); /* Start position */
+  }
+  50% {
+    transform: translateX(-45%) translateY(-5px); /* Middle position */
+  }
+  100% {
+    transform: translateX(-50%) translateY(0); /* End position */
+  }
+}
+
+/* Additional Styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  margin: -100px 0 0 0;
 }
 
 .left-links {
   display: flex;
   text-align: left;
-  width: 40%;
-  position: absolute;
-  left: 0;
-  top: 67%;
-  transform: translateY(-50%);
-  margin-left:20px;
+  margin-left: 20px;
+  transform: translateY(-15px);
+  transition: transform 0.5s; /* Animation for the left links */
 }
 
 .right-links {
   text-align: right;
-  width: 17%;
-  position: absolute;
-  right: 0;
-  top: 65%;
-  transform: translateY(-50%);
-
   border-top: 2px solid black;
   padding-bottom: 5px;
+
+  transition: transform 0.5s; /* Animation for the right links */
 }
 
-/* Works text aligned vertically */
-.left-links .works p {
+.left-links .works p,
+.right-links .about p {
   font-size: 4rem;
   font-weight: bold;
 }
 
+.right-links .about p {
+  margin-right: 20px;
+}
 
-/* Japanese Text */
 .left-links .japanese-text-1 p,
 .left-links .japanese-text-2 p,
 .left-links .japanese-text-3 p {
   font-size: 2rem;
   color: black;
   font-weight: bold;
-  margin-right:5px;
+  margin-right: 5px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-style: normal;
 }
 
 .left-links .works,
@@ -119,31 +160,117 @@ header {
 }
 
 .left-links .line {
-  width: 2px; /* Thickness of the line */
+  width: 2px;
   background-color: black;
-  margin: 0 5px 0 5px;
-}
-
-/* Right Side: About and Contact */
-.right-links .about p,
-.right-links .contact p {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-right:20px;
+  margin: 0 5px;
 }
 
 .right-links .contact p {
   font-size: 1.8rem;
+  margin-right: 20px;
 }
 
-
 a {
-  color: black;               /* Set the font color to black */
-  text-decoration: none;      /* Remove underline */
-  transition: none;           /* No animation or transition effect */
+  color: black;
+  text-decoration: none;
+  transition: none;
 }
 
 a:hover {
-  color: black;               /* Ensure color stays black on hover */
-  text-decoration: none;      /* Ensure underline is removed on hover */
+  color: black;
+  text-decoration: none;
+}
+
+/* Media Queries for iPad */
+@media (min-width: 800px) and (max-width: 1024px) and (min-height: 600px) and (max-height: 768px) {
+  .character img {
+    max-width: 80%; /* Smaller character for iPad */
+  }
+
+  .left-links {
+    transform: translateY(-20px); /* Adjust up for Phone */
+  }
+
+  .right-links {
+    transform: translateY(50px); /* Adjust up for iPad */
+  }
+
+  .text-content h1 {
+    position: absolute;
+    left: 7.5%; /* Align with the left */
+    width: 90%; /* Increase size */
+    height: auto; /* Set to auto height */
+    font-size: 15vw; /* Smaller font for iPad */
+    bottom: 120%;
+  }
+
+  .left-links .works p {
+    font-size: 3.2rem; /* Smaller font for Phone */
+  }
+
+  .right-links .about p {
+    font-size: 2.5rem; /* Smaller font for Phone */
+  }
+
+  .right-links .contact p {
+    font-size: 1.5rem; /* Smaller font for Phone */
+  }
+
+  .left-links .line,
+  .left-links .japanese-text-2,
+  .left-links .japanese-text-3 {
+    display: none;
+  }
+
+  .logo {
+    width: 80px; /* Logo smaller for iPhone */
+  }
+}
+
+/* Media Queries for iPhone */
+@media (max-width: 430px) and (max-height: 932px) {
+  .text-content h1 {
+        position: absolute; /* Move the linh-page up */
+        bottom: 285%; /* Adjust to desired vertical positioning for iPhone */
+        left: 7.5%; /* Align with the left */
+        width: 90%; /* Increase size */
+        height: auto; /* Set to auto height */
+        font-size: 14vw; /* Larger font size for iPhone */
+    }
+
+  .character img {
+    max-width: 100%; /* Smaller character for iPhone */
+  }
+
+  .left-links {
+    transform: translateY(-250px); /* Adjust up for Phone */
+  }
+
+  .right-links {
+    transform: translateY(-150px); /* Adjust up for Phone */
+  }
+
+  .right-links .about p {
+    font-size: 2rem; /* Smaller font for Phone */
+  }
+
+  .left-links .works p {
+    font-size: 2.5rem; /* Smaller font for Phone */
+  }
+
+  .logo {
+    width: 40px; /* Logo smaller for iPad */
+  }
+
+  .right-links .contact p,
+  .left-links .japanese-text-1 p,
+  .left-links .japanese-text-2 p,
+  .left-links .japanese-text-3 p {
+    font-size: 1.2rem; /* Smaller font for Phone */
+  }
+}
+
+/* Normal website style for laptops */
+@media (min-width: 1280px) and (max-width: 1600px) and (min-height: 800px) and (max-height: 1000px) {
+  /* Add normal laptop styles here */
 }

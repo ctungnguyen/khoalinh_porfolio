@@ -9,7 +9,7 @@
 <body>
   <!-- Header with the logo -->
   <header>
-    <a href = "homepage.html">
+    <a href="homepage.html">
       <img src="./assets/logo.svg" alt="Linh Page Logo" class="logo">
     </a>
   </header>
@@ -17,18 +17,23 @@
   <!-- Main content -->
   <div class="main-content">
     <!-- Background image -->
+    <img src="" alt="background" class="background" id="background">
 
-    <img src="./assets/background.png" alt="background" class="background">
-
+    <!-- Cloud or Sea image for animation -->
+<img src="" alt="Cloud or Sea" class="cloud" id="cloud"> <!-- Cloud or Sea animation -->
+<img src="" alt="Sea Image" class="sea" id="sea"> <!-- Sea animation -->
+    
     <!-- Character image in the center -->
     <div class="character">
-      <img src="./assets/character.png" alt="Character Image">
+      <img src="" alt="Character Image" id="character">
     </div>
 
     <!-- Text sections -->
     <div class="text-content">
       <h1>Linh Page</h1>
       
+      <!-- Grid layout for links -->
+      <div class="grid-container">
         <!-- Left Side: Works and Japanese Text -->
         <div class="left-links">
           <a href="works.html" class="works">
@@ -51,13 +56,10 @@
 
           <div class="japanese-text-2">
             <p>こ</p>
-            <p>こ</p>
+            <p>に</p>
+            <p>ち</p>
             <p>は</p>
-            <p>私</p>
-            <p>の</p>
-            <p>サ</p>
-            <p>イ</p>
-            <p>ト</p>
+            <p>！</p>
           </div>
 
           <div class="japanese-text-3">
@@ -67,6 +69,8 @@
             <p>私</p>
             <p>の</p>
             <p>サ</p>
+            <p>イ</p>
+            <p>ト</p>
           </div>
         </div>
 
@@ -77,13 +81,15 @@
             <p>情報</p>
           </a>
 
-          <div class="contact">
+          <a href="about.html" class="contact">
             <p>Contact</p>
             <p>接触</p>
-          </div>
+          </a>
         </div>
       </div>
     </div>
-  
+  </div>
+
+  <script src="homepage.js"></script> <!-- Link to your JS file -->
 </body>
 </html>
